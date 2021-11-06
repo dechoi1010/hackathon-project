@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=158df7abfc0977051249af7e3a332267"></script>
     <link rel="stylesheet" href="css/style.css" />
-    <title>숙명여대 맛집 리스트</title>
+    <title>숙명여대 학생을 위한 Todo List</title>
   </head>
   <body>
-    <h1>Test</h1>
-    <script src="js/map.js"></script>
+    <h2>Todo List</h2>
+    <form id="login-form" class="hidden">
+      <input 
+        required
+        maxlength="15"
+        placeholder="이름을 입력하세요" 
+        type="text"
+      />
+      <input type="submit" value="Login" />
+    </form>
+    <h1 id="greet" class="hidden"></h1>
+    <script src="js/script.js"></script>
   </body>
 </html>
