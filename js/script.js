@@ -1,6 +1,6 @@
 // script.js
 const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
+const loginInput = document.querySelector(".login_box");
 const greet = document.querySelector("#greet");
 
 const HIDDEN_CLASS = "hidden";

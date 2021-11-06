@@ -9,26 +9,29 @@
   </head>
   <body>
     <div class="background-overlay"></div>
-    <h2>Todo List</h2>
-    <div class="containter">
-      <div class="img_item">
+    <div class="container">
+      <form id="login-form" class="hidden login_form">
+        <label class="login_intro">이름을 입력해주세요</label>
+        <input class="login_box"
+          required
+          maxlength="15"
+          placeholder="" 
+          type="text"
+        />
+      </form>
+      
+      <div class="hidden greeting" id="greet">
+        <h2 class="time"></h2>
+        <div calss="greet_message">
+          <span id="hello"></span>
+          <span id="username"></span>
         </div>
-    </div>
-    <form id="login-form" class="hidden">
-      <input 
-        required
-        maxlength="15"
-        placeholder="이름을 입력하세요" 
-        type="text"
-      />
-      <input type="submit" value="Login" />
-    </form>
-    <h2 id="clock"></h2>
-    <h1 id="greet" class="hidden"></h1>
-    <div id="quotes">
-      <span></span>
-      <br>
-      <span></span>
+      </div>
+      
+      <div class="quotes">
+        <span class="quote"></span>
+        <span class="author"></span>
+      </div>
     </div>
     <script src="js/script.js"></script>
     <script src="js/clock.js"></script>
