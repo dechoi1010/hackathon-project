@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>숙명여대 학생을 위한 Todo List</title>
   </head>
   <body>
-    <div class="background-overlay"></div>
+    <div class="background_overlay hidden"></div>
     <div class="container">
       <form id="login-form" class="hidden login_form">
         <label class="login_intro">이름을 입력해주세요</label>
@@ -21,7 +22,7 @@
       </form>
       
       <div class="greeting hidden" id="greet">
-        <h2 class="time"></h2>
+        <div class="time"></div>
         <div class="greet_message"></div>
       </div>
       
@@ -30,8 +31,17 @@
         <span class="author"></span>
       </div>
     </div>
+
+    <div class="todo_box hidden">
+      
+      <form class="todo_form">
+        <input class="todo_input" type="text" placeholder="Write a To Do and Press Enter" required />
+      </form>
+      <ul class="todo_list"></ul>
+    </div>
     <script src="js/script.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
+    <script src="js/todo.js"></script>
   </body>
 </html>
