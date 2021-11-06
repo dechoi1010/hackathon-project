@@ -1,7 +1,8 @@
 // script.js
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector(".login_box");
-const greet = document.querySelector("#greet");
+const greet = document.querySelector(".greeting");
+const greetMessage = greet.querySelector(".greet_message");
 
 const HIDDEN_CLASS = "hidden";
 const USER_KEY = "username";
@@ -15,7 +16,7 @@ function formSubmit(event) {
 }
 
 function paintgGreet(username) {
-    greet.innerText = `hello ${username}`;
+    greetMessage.innerText = `hello ${username}`;
     greet.classList.remove(HIDDEN_CLASS);
 }
 
