@@ -12,7 +12,6 @@ const showMenu = (toggleId, navbarId, bodyId) => {
     });
   }
 };
-
 showMenu("nav-toggle", "navbar", "body-pd");
 
 /* LINK ACTIVE */

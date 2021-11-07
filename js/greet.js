@@ -1,6 +1,9 @@
 const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
-const greet = document.querySelector("#greet");
+const loginInput = document.querySelector(".login_box");
+const greet = document.querySelector(".greeting");
+const greetMessage = greet.querySelector(".greet_message");
+const bg = document.querySelector(".background_overlay");
+const todo = document.querySelector(".todo_box");
 
 const HIDDEN_CLASS = "hidden";
 const USER_KEY = "username";
@@ -14,8 +17,10 @@ function formSubmit(event) {
 }
 
 function paintgGreet(username) {
-  greet.innerText = `hello ${username}`;
+  greetMessage.innerText = `hello ${username}`;
   greet.classList.remove(HIDDEN_CLASS);
+  bg.classList.remove(HIDDEN_CLASS);
+  todo.classList.remove(HIDDEN_CLASS);
 }
 
 const savedUser = localStorage.getItem(USER_KEY);

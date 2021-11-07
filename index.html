@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo List</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
-  <body>
-    <div id="wrap">
-      <!-- header 
-      : 시계, 사용자 환영 문구 등을 헤더 쪽에 넣으면 좋을 듯-->
-      <header></header>
+
+  <body id="body-pd">
+      <header>
+        <h2>header test</h2>
+        <div class="greeting hidden" id="greet">
+          <div class="time"></div>
+          <div class="greet_message"></div>
+        </div>
+      </header>
 
       <!-- navigation bar -->
       <div class="l-navbar" id="navbar">
         <nav class="nav">
           <div>
             <div class="nav__brand">
-              <ion-icon name="menu-outline"></ion-icon>
+              <ion-icon name="menu-outline"  class="nav__toggle" id="nav-toggle"></ion-icon>
               <a href="#" class="nav__logo">SMWU</a>
             </div>
 
             <div class="nav__list">
-              <a href="#" class="nav__link">
+              <a href="#" class="nav__link active">
                 <ion-icon name="reader-outline" class="nav__icon"></ion-icon>
                 <span class="nav_name">오늘 할 일</span>
               </a>
@@ -34,15 +39,16 @@
               <div href="#" class="nav__link collapse">
                 <ion-icon name="school-outline" class="nav__icon"></ion-icon>
                 <span class="nav_name">학교 일정</span>
+
                 <ion-icon
                   name="chevron-down-outline"
                   class="collapse__link"
                 ></ion-icon>
 
                 <ul class="collapse__menu">
-                  <a href="#" class="collapse__sublink">과제</a>
-                  <a href="#" class="collapse__sublink">시험</a>
-                  <a href="#" class="collapse__sublink">공부</a>
+                  <a href="#" class="collapse__sublink">Assignment</a>
+                  <a href="#" class="collapse__sublink">Exam</a>
+                  <a href="#" class="collapse__sublink">Study</a>
                   <a href="#" class="collapse__sublink">ETC</a>
                 </ul>
               </div>
@@ -73,23 +79,42 @@
                 <span class="nav_name">설정</span>
               </a>
               <a href="#" class="nav__link">
-                <ion-icon
-                  name="information-circle-outline"
-                  class="nav__icon"
-                ></ion-icon>
-                <span class="nav_name">회원 정보</span>
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">로그아웃</span>
               </a>
             </div>
           </div>
         </nav>
       </div>
+      <h1>Test component</h1>
 
       <!-- 메인 : todo list 표시될 곳-->
-      <section class="todo-list"></section>
+      <section class="todo-list">
+        <div class="background_overlay hidden"></div>
+        <div class="container">
+          <form id="login-form" class="hidden login_form">
+            <label class="login_intro">이름을 입력해주세요</label>
+            <input class="login_box"
+              required
+              maxlength="15"
+              placeholder="" 
+              type="text"
+            />
+          </form>
+          <div class="todo_box hidden">
+      
+            <form class="todo_form">
+              <input class="todo_input" type="text" placeholder="Write a To Do and Press Enter" required />
+            </form>
+            <ul class="todo_list"></ul>
+          </div>
+      </section>
 
-      <!-- 명언 넣을거면 footer로-->
-    </div>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/greet.js"></script>
+    <script src="js/todo.js"></script>
     <script src="js/nav.js"></script>
+    
   </body>
 </html>
