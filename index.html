@@ -2,14 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=158df7abfc0977051249af7e3a332267"></script>
+    <title>ToDo List</title>
     <link rel="stylesheet" href="css/style.css" />
-    <title>숙명여대 맛집 리스트</title>
   </head>
   <body>
-    <h1>Test</h1>
-    <script src="js/map.js"></script>
+    <div id="wrap">
+      <!-- header 
+      : 시계, 사용자 환영 문구 등을 헤더 쪽에 넣으면 좋을 듯-->
+      <header></header>
+
+      <!-- navigation bar -->
+      <div class="l-navbar" id="navbar">
+        <nav class="nav">
+          <div>
+            <div class="nav__brand">
+              <ion-icon name="menu-outline"></ion-icon>
+              <a href="#" class="nav__logo">SMWU</a>
+            </div>
+
+            <div class="nav__list">
+              <a href="#" class="nav__link">
+                <ion-icon name="reader-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">오늘 할 일</span>
+              </a>
+              <a href="#" class="nav__link">
+                <ion-icon name="calendar-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">일주일 안에 할 일</span>
+              </a>
+              <hr />
+              <div href="#" class="nav__link collapse">
+                <ion-icon name="school-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">학교 일정</span>
+                <ion-icon
+                  name="chevron-down-outline"
+                  class="collapse__link"
+                ></ion-icon>
+
+                <ul class="collapse__menu">
+                  <a href="#" class="collapse__sublink">과제</a>
+                  <a href="#" class="collapse__sublink">시험</a>
+                  <a href="#" class="collapse__sublink">공부</a>
+                  <a href="#" class="collapse__sublink">ETC</a>
+                </ul>
+              </div>
+
+              <div href="#" class="nav__link collapse">
+                <ion-icon name="people-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">개인 일정</span>
+                <ion-icon
+                  name="chevron-down-outline"
+                  class="collapse__link"
+                ></ion-icon>
+
+                <ul class="collapse__menu">
+                  <a href="#" class="collapse__sublink">Fitness</a>
+                  <a href="#" class="collapse__sublink">Groceries</a>
+                  <a href="#" class="collapse__sublink">Study</a>
+                  <a href="#" class="collapse__sublink">Movie List</a>
+                  <a href="#" class="collapse__sublink">Reading List</a>
+                  <a href="#" class="collapse__sublink">ETC</a>
+                </ul>
+              </div>
+              <hr />
+            </div>
+
+            <div class="user-info">
+              <a href="#" class="nav__link">
+                <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">설정</span>
+              </a>
+              <a href="#" class="nav__link">
+                <ion-icon
+                  name="information-circle-outline"
+                  class="nav__icon"
+                ></ion-icon>
+                <span class="nav_name">회원 정보</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- 메인 : todo list 표시될 곳-->
+      <section class="todo-list"></section>
+
+      <!-- 명언 넣을거면 footer로-->
+    </div>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="js/nav.js"></script>
   </body>
 </html>
