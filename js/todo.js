@@ -17,11 +17,13 @@ let weekToDos = [];
 let schoolToDos = [];
 let personalToDos = [];
 let newTodo = "";
+let checkID = []; //
 
 const TODO_KEY = "todos";
 const WEEK_TODO_KEY = "weektodos";
 const SCHOOL_KEY = "schooltodos";
 const PERSONAL_KEY = "personaltodos";
+const CHECK_ID =  "checkid";
 
 function toDoSubmit(event) {
     event.preventDefault();
@@ -54,6 +56,11 @@ function paintToDo(newTodoObj) {
 
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
+    // if li.id 가 checkId 목록에 일치하면 checked=true
+    const parsedCheck = JSON.parse(localStorage.getItem(CHECK_ID));
+    if (parsedCheck.includes(String(newTodoObj.id))) {
+        checkBox.setAttribute('checked',true)
+    }
     li.appendChild(checkBox);
 
     const span = document.createElement("span");
@@ -69,7 +76,22 @@ function paintToDo(newTodoObj) {
     li.id = newTodoObj.id;
     todoList.appendChild(li);
     
+    checkBox.addEventListener("click", checkCheck); //
     spanBtn.addEventListener("click", deleteToDo);
+}
+
+function checkCheck(event) { 
+    checkID = JSON.parse(localStorage.getItem(CHECK_ID));
+    const li = event.target.parentElement;
+    console.log(li.id, typeof(li.id));
+    if (li.querySelector("input").checked === true) {
+        checkID.push(li.id);
+    } else {
+        checkID = checkID.filter((item) => item !== li.id); 
+        
+    }
+    localStorage.setItem(CHECK_ID, JSON.stringify(checkID));
+
 }
 
 function deleteToDo(event) {
