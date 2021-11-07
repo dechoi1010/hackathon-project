@@ -1,70 +1,335 @@
-/* style.css */
+
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap");
+/*
+font-family: 'Do Hyeon', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+*/
+
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
-.background-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background-image: url('../img/1.png');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8;
+header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0px;
+  padding: auto;
+  padding-right: 20px;
+  color: rgb(65, 65, 65);
 }
 
 .container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login_form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 3.5rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 3.5rem;
+  text-align: center;
 }
 
 .login_intro {
-    margin-top: 20px;
-    color: #fff;
-    text-align: center;
-    font: inherit;
+  margin-top: 20px;
+  color: rgb(20, 19, 19);
+  text-align: center;
+  font: inherit;
 }
 
 .login_box {
-    margin-top: 20px;
-    padding: 8px 0;
-    border: 2px solid #fff;
-    border-radius: 1px;
-    background: none;
-    color: #fff;
-    font: inherit;
-    font-size: 2.5rem;
-    text-align: center;
+  margin-top: 20px;
+  padding: 8px 0;
+  border: 2px solid rgb(71, 71, 71);
+  border-radius: 1px;
+  background: none;
+  color: rgb(24, 21, 21);
+  font: inherit;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
-.login_box:focus { 
-    background:rgb(156, 172, 185); 
-    outline:none; 
+.login_box:focus {
+  outline: none;
 }
 
 .greeting {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    font-size: 3.5rem;
-    text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: right;
+
+  display: flex;
+  flex-direction: column;
+  padding-right: 5%;
 }
+
+.time {
+  margin-left: 10px;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.todo_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  top: 300px;
+  left: 30px;
+}
+
+.todo_input {
+  padding: 8px;
+  border: 2px solid rgb(37, 36, 36);
+  border-radius: 5px;
+  background: none;
+  outline: none;
+}
+
+.todo_list {
+  position: relative;
+  right: 35px;
+  width: 170px;
+  height: 50px;
+  /*overflow: auto;*/
+  overflow: overlay;
+}
+
+/*scroll bar*/
+.todo_list::-webkit-scrollbar {
+  width: 10px;
+  opacity: 0.5%;
+}
+
+.todo_list::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 42%, 0.49);
+  border-radius: 100px;
+}
+
+.todo_li {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  padding: 5px 0;
+  font-size: 0.9rem;
+}
+
+.todo_li .material-icons {
+  display: none;
+  position: absolute;
+  right: 10px;
+  padding: 1.5px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #aaa;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.todo_li:hover .material-icons {
+  display: block;
+}
+
+.todo_li > .todo_text {
+  overflow: hidden;
+  width: 125px;
+  margin-top: -1px;
+  line-height: 1.3rem;
+}
+
+.todo_li input[type="checkbox"]:checked + span {
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+:root {
+  --nav--width: 92px;
+
+  /* Colores */
+  --first-color: #5781ce;
+  --bg-color: #0e2974;
+  --sub-color: #b6cefc;
+  --white-color: #fff;
+
+  /* Fuente y tipografia */
+  --body-font: "Poppins", sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+
+  /* z index */
+  --z-fixed: 100;
+}
+
+/* BASE */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 0 6.75rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: 0.5s;
+}
+
+hr {
+  background-color: rgb(163, 163, 163);
+  border: 0;
+  height: 1px;
+}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* l NAV */
+.l-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--nav--width);
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  padding: 1.5rem 1.5rem 2rem;
+  transition: 0.5s;
+  z-index: var(--z-fixed);
+}
+
+/* NAV */
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav__brand {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.nav__toggle {
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.nav__logo {
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.nav__link {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 0.75rem;
+  padding: 0.75rem;
+  color: var(--white-color);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav__link:hover {
+  background-color: var(--first-color);
+}
+
+.nav__icon {
+  font-size: 1.25rem;
+}
+
+.nav_name {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: var(--small-font-size);
+}
+
+/* Expander menu */
+.expander {
+  width: calc(var(--nav--width) + 9.25rem);
+}
+
+/* Add padding body*/
+.body-pd {
+  padding: 0 0 0 16rem;
+}
+
+/* Active links menu */
+.active {
+  background-color: var(--first-color);
+}
+
+/* COLLAPSE */
+.collapse {
+  grid-template-columns: 20px max-content 1fr;
+}
+
+.collapse__link {
+  justify-self: flex-end;
+  transition: 0.5;
+}
+
+.collapse__menu {
+  display: none;
+  padding: 0.75rem 2.25rem;
+}
+
+.collapse__sublink {
+  color: var(--sub-color);
+  font-size: var(--small-font-size);
+}
+
+.collapse__sublink:hover {
+  color: var(--white-color);
+}
+
+/* Show collapse */
+.showCollapse {
+  display: block;
+}
+
+/* Rotate icon */
+.rotate {
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+
