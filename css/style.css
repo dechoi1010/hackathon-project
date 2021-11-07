@@ -30,6 +30,7 @@ section {
 }
 
 .login_form {
+  margin: 100px;
   font-family: "Noto Sans KR", sans-serif;
   display: flex;
   flex-direction: column;
@@ -39,7 +40,6 @@ section {
 }
 
 .login_intro {
-  margin-top: 20px;
   color: rgb(20, 19, 19);
   text-align: center;
   font: inherit;
@@ -96,7 +96,7 @@ section {
 
 .todo_list {
   background-color: rgb(224, 237, 250);
-  padding-top: 8px;
+  padding: 10px;
   margin-top: 15px;
   width: 250px;
   height: 200px;
@@ -121,6 +121,7 @@ section {
   align-items: flex-start;
   position: relative;
   padding: 5px 0;
+  margin: 5px;
   font-size: 0.9rem;
 }
 
@@ -303,39 +304,4 @@ a {
 /* Active links menu */
 .active {
   background-color: var(--first-color);
-}
-
-/* COLLAPSE */
-.collapse {
-  grid-template-columns: 20px max-content 1fr;
-}
-
-.collapse__link {
-  justify-self: flex-end;
-  transition: 0.5;
-}
-
-.collapse__menu {
-  display: none;
-  padding: 0.75rem 2.25rem;
-}
-
-.collapse__sublink {
-  color: var(--sub-color);
-  font-size: var(--small-font-size);
-}
-
-.collapse__sublink:hover {
-  color: var(--white-color);
-}
-
-/* Show collapse */
-.showCollapse {
-  display: block;
-}
-
-/* Rotate icon */
-.rotate {
-  transform: rotate(180deg);
-  transition: 0.5s;
 }
