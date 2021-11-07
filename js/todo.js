@@ -26,7 +26,7 @@ const WEEK_TODO_KEY = "weektodos";
 const SCHOOL_KEY = "schooltodos";
 const PERSONAL_KEY = "personaltodos";
 const CHECK_ID =  "checkid";
-localStorage.setItem(CHECK_ID, JSON.stringify(checkID));
+
 
 function toDoSubmit(event) {
     event.preventDefault();
@@ -60,10 +60,12 @@ function paintToDo(newTodoObj) {
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     // if li.id 가 checkId 목록에 일치하면 checked=true
-    const parsedCheck = JSON.parse(localStorage.getItem(CHECK_ID));
-    console.log(parsedCheck);
-    if (parsedCheck.includes(String(newTodoObj.id))) {
-        checkBox.setAttribute('checked',true)
+    
+    if(localStorage.getItem(CHECK_ID)) {
+        const parsedCheck = JSON.parse(localStorage.getItem(CHECK_ID));
+        if (parsedCheck.includes(String(newTodoObj.id))) {
+            checkBox.setAttribute('checked',true)
+        }
     }
     li.appendChild(checkBox);
 
@@ -85,14 +87,17 @@ function paintToDo(newTodoObj) {
 }
 
 function checkCheck(event) { 
-    checkID = JSON.parse(localStorage.getItem(CHECK_ID));
+    
     const li = event.target.parentElement;
-    console.log(li.id, typeof(li.id));
-    if (li.querySelector("input").checked === true) {
-        checkID.push(li.id);
-    } else {
-        checkID = checkID.filter((item) => item !== li.id); 
-        
+    //console.log(li.id, typeof(li.id));
+    if(localStorage.getItem(CHECK_ID)) {
+        checkID = JSON.parse(localStorage.getItem(CHECK_ID));
+        if (li.querySelector("input").checked === true) {
+            checkID.push(li.id);
+        } else {
+            checkID = checkID.filter((item) => item !== li.id); 
+            
+        }
     }
     localStorage.setItem(CHECK_ID, JSON.stringify(checkID));
 
@@ -213,5 +218,5 @@ personal.addEventListener("click", () => {
 });
 
 
-console.log((login.classList.contains("hidden")));
+//console.log((login.classList.contains("hidden")));
 
