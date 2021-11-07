@@ -1,7 +1,6 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector(".login_box");
-const greet = document.querySelector(".greeting");
-const greetMessage = greet.querySelector(".greet_message");
+const greetMessage = document.querySelector(".greeting");
 const bg = document.querySelector(".background_overlay");
 const todo = document.querySelector(".todo_box");
 
@@ -13,12 +12,12 @@ function formSubmit(event) {
   const username = loginInput.value;
   loginForm.classList.add(HIDDEN_CLASS);
   localStorage.setItem(USER_KEY, username);
-  paintgGreet(username);
+  paintGreet(username);
 }
 
-function paintgGreet(username) {
-  greetMessage.innerText = `hello ${username}`;
-  greet.classList.remove(HIDDEN_CLASS);
+function paintGreet(username) {
+  greetMessage.innerText = `안녕하세요, ${username} 님!`;
+  greetMessage.classList.remove(HIDDEN_CLASS);
   bg.classList.remove(HIDDEN_CLASS);
   todo.classList.remove(HIDDEN_CLASS);
 }
@@ -31,5 +30,5 @@ if (savedUser === null) {
   loginForm.addEventListener("submit", formSubmit);
 } else {
   //show the greet
-  paintgGreet(savedUser);
+  paintGreet(savedUser);
 }
