@@ -10,7 +10,7 @@
 const todoForm = document.querySelector(".todo_form");
 const todoList = document.querySelector(".todo_list");
 const todoBox = document.querySelector(".todo_box");
-const todoText = document.querySelector(".todo_text");
+const todoText = document.querySelector(".todo_hi");
 let whatTodo = 1;
 
 let toDos = [];
@@ -18,13 +18,15 @@ let weekToDos = [];
 let schoolToDos = [];
 let personalToDos = [];
 let newTodo = "";
-let checkID = []; //
+let checkID = [];
+
 
 const TODO_KEY = "todos";
 const WEEK_TODO_KEY = "weektodos";
 const SCHOOL_KEY = "schooltodos";
 const PERSONAL_KEY = "personaltodos";
 const CHECK_ID =  "checkid";
+
 
 function toDoSubmit(event) {
     event.preventDefault();
@@ -58,9 +60,12 @@ function paintToDo(newTodoObj) {
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     // if li.id 가 checkId 목록에 일치하면 checked=true
-    const parsedCheck = JSON.parse(localStorage.getItem(CHECK_ID));
-    if (parsedCheck.includes(String(newTodoObj.id))) {
-        checkBox.setAttribute('checked',true)
+    
+    if(localStorage.getItem(CHECK_ID)) {
+        const parsedCheck = JSON.parse(localStorage.getItem(CHECK_ID));
+        if (parsedCheck.includes(String(newTodoObj.id))) {
+            checkBox.setAttribute('checked',true)
+        }
     }
     li.appendChild(checkBox);
 
@@ -82,14 +87,17 @@ function paintToDo(newTodoObj) {
 }
 
 function checkCheck(event) { 
-    checkID = JSON.parse(localStorage.getItem(CHECK_ID));
+    
     const li = event.target.parentElement;
-    console.log(li.id, typeof(li.id));
-    if (li.querySelector("input").checked === true) {
-        checkID.push(li.id);
-    } else {
-        checkID = checkID.filter((item) => item !== li.id); 
-        
+    //console.log(li.id, typeof(li.id));
+    if(localStorage.getItem(CHECK_ID)) {
+        checkID = JSON.parse(localStorage.getItem(CHECK_ID));
+        if (li.querySelector("input").checked === true) {
+            checkID.push(li.id);
+        } else {
+            checkID = checkID.filter((item) => item !== li.id); 
+            
+        }
     }
     localStorage.setItem(CHECK_ID, JSON.stringify(checkID));
 
@@ -143,26 +151,26 @@ function a() {
         resetToDo();
         const parsedToDos = JSON.parse(savedToDos);
         toDos = parsedToDos;
-        todoText.innerText = "Today's To-Do List";
+        
         parsedToDos.forEach(paintToDo);
     } else if(savedWeekToDos && whatTodo === 2) {
         resetToDo();
         const parsedWeekToDos = JSON.parse(savedWeekToDos);
         weekToDos = parsedWeekToDos;
-        todoText.innerText = "This week's To-Do List";
+        
         parsedWeekToDos.forEach(paintToDo);
     } else if(savedSchool && whatTodo === 3) {
         resetToDo();
         const parsedSchoolToDos = JSON.parse(savedSchool);
         schoolToDos = parsedSchoolToDos;
-        todoText.innerText = "My School Schedule List";
+        
         parsedSchoolToDos.forEach(paintToDo);
 
     } else if(savedPersonal && whatTodo === 4) {
         resetToDo();
         const parsedPersonalToDos = JSON.parse(savedPersonal);
         personalToDos = parsedPersonalToDos;
-        todoText.innerText = "My personal schedule List";
+        
         parsedPersonalToDos.forEach(paintToDo);
     } else {
         resetToDo();
@@ -182,25 +190,33 @@ const login = document.querySelector('.login_form');
 
 todayList.addEventListener("click", () => {
     if(login.classList.contains("hidden")) {
-        whatTodo = 1; a();
+        whatTodo = 1; 
+        todoText.innerText = "Today's To-Do List";
+        a();
     }
 });
 weekList.addEventListener("click", () => {
     if(login.classList.contains("hidden")) {
-        whatTodo = 2; a();
+        whatTodo = 2; 
+        todoText.innerText = "This week's To-Do List";
+        a();
     }
 });
 school.addEventListener("click", () => {
     if(login.classList.contains("hidden")) {
-        whatTodo = 3; a();
+        whatTodo = 3; 
+        todoText.innerText = "My School Schedule List";
+        a();
     }
 });
 personal.addEventListener("click", () => {
     if(login.classList.contains("hidden")) {
-        whatTodo = 4; a();
+        whatTodo = 4; 
+        todoText.innerText = "My personal schedule List";
+        a();
     }
 });
 
 
-console.log((login.classList.contains("hidden")));
+//console.log((login.classList.contains("hidden")));
 

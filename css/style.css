@@ -97,7 +97,7 @@ section {
   outline: none;
 }
 
-.todo_text {
+.todo_hi {
   margin-bottom : 10px
 }
 
@@ -151,7 +151,7 @@ section {
 
 .todo_li > .todo_text {
   overflow: hidden;
-  width: 125px;
+  width: 420px;
   margin-top: -1px;
   line-height: 1.3rem;
 }
