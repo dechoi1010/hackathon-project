@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+  </head>
+
+  <body id="body-pd">
+      <header>
+        <h2 class="time"></h2>          
+        <div class="greeting hidden"></div>
+      </header>
+
+      <!-- navigation bar -->
+      <div class="l-navbar" id="navbar">
+        <nav class="nav">
+          <div>
+            <div class="nav__brand">
+              <ion-icon name="menu-outline"  class="nav__toggle" id="nav-toggle"></ion-icon>
+              <a href="#" class="nav__logo">SMWU</a>
+            </div>
+
+            <div class="nav__list">
+              <a href="#" class="nav__link" id="today-list">
+                <ion-icon name="reader-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">오늘 할 일</span>
+              </a>
+              <a href="#" class="nav__link" id="week-list">
+                <ion-icon name="calendar-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">일주일 안에 할 일</span>
+              </a>
+              <hr />
+              <a href="#" class="nav__link" id="school">
+                <ion-icon name="school-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">학교 일정</span>
+              </a>
+
+              <a href="#" class="nav__link" id="personal">
+                <ion-icon name="people-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">개인 일정</span>
+              </a>
+              <hr />
+            </div>
+
+            <div class="user-info">
+              <a href="#" class="nav__set" id="logout_btn">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name" >로그아웃</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- 메인 : todo list 표시될 곳-->
+      <section>
+          <form id="login-form" class="hidden login_form">
+            <label class="login_intro">이름을 입력해주세요</label>
+            <input class="login_box"
+              required
+              maxlength="10"
+              placeholder="" 
+              type="text"
+            />
+          </form>
+          <div class="todo_box hidden">
+            <span class="todo_hi"></span>
+            <form class="todo_form">
+              <input class="todo_input" type="text" placeholder="New Todo" required />
+            </form>
+            <ul class="todo_list"></ul>
+          
+      </section>
+
+   <!-- <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script> -->
+    <script src="js/greet.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>
