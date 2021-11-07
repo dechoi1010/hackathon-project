@@ -71,45 +71,36 @@
             </div>
 
             <div class="user-info">
-              <a href="#" class="nav__link">
-                <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
-                <span class="nav_name">설정</span>
-              </a>
-              <a href="#" class="nav__link">
+              <a href="#" class="nav__set" id="logout_btn">
                 <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                <span class="nav_name">로그아웃</span>
+                <span class="nav_name" >로그아웃</span>
               </a>
             </div>
           </div>
         </nav>
       </div>
-      <h1>Test component</h1>
-
       <!-- 메인 : todo list 표시될 곳-->
-      <section class="todo-list">
-        <div class="background_overlay hidden"></div>
-        <div class="container">
+      <section>
           <form id="login-form" class="hidden login_form">
             <label class="login_intro">이름을 입력해주세요</label>
             <input class="login_box"
               required
-              maxlength="15"
+              maxlength="10"
               placeholder="" 
               type="text"
             />
           </form>
           <div class="todo_box hidden">
-      
             <form class="todo_form">
-              <input class="todo_input" type="text" placeholder="Write a To Do and Press Enter" required />
+              <input class="todo_input" type="text" placeholder="New Todo" required />
             </form>
             <ul class="todo_list"></ul>
-          </div>
+          
       </section>
 
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-    <script src="js/clock.js"></script>
     <script src="js/greet.js"></script>
+    <script src="js/clock.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/nav.js"></script>
   </body>
