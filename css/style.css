@@ -160,7 +160,7 @@
 
   .todo_li > .todo_text {
     overflow: hidden;
-    width: 130px;
+    width: 125px;
     margin-top: -1px;
     line-height: 1.3rem;
   }
