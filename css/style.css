@@ -30,6 +30,9 @@ section {
 }
 
 .login_form {
+  position:relative;
+  top: 100px;
+  left: 450px;
   margin: 100px;
   font-family: "Noto Sans KR", sans-serif;
   display: flex;
@@ -81,25 +84,29 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 50px;
-  padding-left: 30px;
+  padding-top: 100px;
+  padding-left: 400px;
 }
 
 .todo_input {
   padding: 11px;
-  width: 250px;
+  width: 500px;
   border: 2px solid rgb(128, 128, 128);
   border-radius: 0.8rem;
   background: none;
   outline: none;
 }
 
+.todo_text {
+  margin-bottom : 10px
+}
+
 .todo_list {
   background-color: rgb(224, 237, 250);
   padding: 10px;
   margin-top: 15px;
-  width: 250px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
 
   /*overflow: auto;*/
   overflow: overlay;

@@ -10,6 +10,7 @@
 const todoForm = document.querySelector(".todo_form");
 const todoList = document.querySelector(".todo_list");
 const todoBox = document.querySelector(".todo_box");
+const todoText = document.querySelector(".todo_text");
 let whatTodo = 1;
 
 let toDos = [];
@@ -142,22 +143,26 @@ function a() {
         resetToDo();
         const parsedToDos = JSON.parse(savedToDos);
         toDos = parsedToDos;
+        todoText.innerText = "Today's To-Do List";
         parsedToDos.forEach(paintToDo);
     } else if(savedWeekToDos && whatTodo === 2) {
         resetToDo();
         const parsedWeekToDos = JSON.parse(savedWeekToDos);
         weekToDos = parsedWeekToDos;
+        todoText.innerText = "This week's To-Do List";
         parsedWeekToDos.forEach(paintToDo);
     } else if(savedSchool && whatTodo === 3) {
         resetToDo();
         const parsedSchoolToDos = JSON.parse(savedSchool);
         schoolToDos = parsedSchoolToDos;
+        todoText.innerText = "My School Schedule List";
         parsedSchoolToDos.forEach(paintToDo);
 
     } else if(savedPersonal && whatTodo === 4) {
         resetToDo();
         const parsedPersonalToDos = JSON.parse(savedPersonal);
         personalToDos = parsedPersonalToDos;
+        todoText.innerText = "My personal schedule List";
         parsedPersonalToDos.forEach(paintToDo);
     } else {
         resetToDo();
@@ -171,11 +176,31 @@ const todayList = document.querySelector('.nav__link#today-list');
 const weekList = document.querySelector('.nav__link#week-list');
 const school = document.querySelector('.nav__link#school');
 const personal = document.querySelector('.nav__link#personal');
-
-todayList.addEventListener("click", () => {whatTodo = 1; a()});
-weekList.addEventListener("click", () => {whatTodo = 2; a()});
-school.addEventListener("click", () => {whatTodo = 3; a()});
-personal.addEventListener("click", () => {whatTodo = 4; a()});
+const login = document.querySelector('.login_form');
 
 
+
+todayList.addEventListener("click", () => {
+    if(login.classList.contains("hidden")) {
+        whatTodo = 1; a();
+    }
+});
+weekList.addEventListener("click", () => {
+    if(login.classList.contains("hidden")) {
+        whatTodo = 2; a();
+    }
+});
+school.addEventListener("click", () => {
+    if(login.classList.contains("hidden")) {
+        whatTodo = 3; a();
+    }
+});
+personal.addEventListener("click", () => {
+    if(login.classList.contains("hidden")) {
+        whatTodo = 4; a();
+    }
+});
+
+
+console.log((login.classList.contains("hidden")));
 
